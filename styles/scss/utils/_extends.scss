@@ -1,0 +1,33 @@
+%section-subtitle {
+  font-family: "DM Serif Display", serif;
+  @include adaptive-property(font-size, 20, 25, 25);
+  line-height: 1.5; /* 37.5px/25 */
+  font-weight: 400;
+  font-style: normal;
+}
+%section-title {
+  font-family: "DM Serif Display", serif;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+}
+%logo {
+  display: block;
+  @include positiion-r;
+  @include adaptive-property(height, 25, 35, 50);
+  @include adaptive-property(width, 100, 120, 177);
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-position: center;
+    object-fit: cover;
+  }
+  &:hover {
+    animation: jello-horizontal $transition-duraction * 2 both;
+  }
+  @include screen-hover {
+    animation: jello-horizontal $transition-duraction * 2 both;
+  }
+}
