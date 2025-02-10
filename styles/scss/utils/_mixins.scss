@@ -8,34 +8,56 @@
     @content;
   }
 }
-@mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
-  $maxWidth: 1280;
-  $addSize: $decktopSize - $mobileSize;
+@mixin adaptive-property($property, $mobileSize, $tableSize, $desktopSize, $unit: px) {
+  $maxWidth: 1980px;
+  $minWidth: 360px;
 
   @if ($tableSize == 0) {
-    #{$property}: $decktopSize + px;
-    //працює понад максимальну ширину
-    // #{$property} : calc(#{$mobileSize  + px} + #{$decktopSize -  $mobileSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    #{$property}: #{$desktopSize}#{$unit};
 
-    // працює до максимальної ширини
-    @media (max-width: #{$maxWidth + px}) {
-      #{$property}: calc(#{$mobileSize}px + #{$addSize} * ((100vw - 320px) / (#{$maxWidth} - 320)));
+    @media (max-width: $maxWidth) {
+      #{$property}: calc(#{$mobileSize}#{$unit} + ($desktopSize - $mobileSize) * ((100vw - #{$minWidth}) / ($maxWidth - $minWidth)));
     }
-  } @else if ($tableSize > 0) {
-    #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 320px) / #{744 - 320}));
+  } @else {
+    #{$property}: calc(#{$mobileSize}#{$unit} + ($tableSize - $mobileSize) * ((100vw - #{$minWidth}) / (744px - $minWidth)));
 
     @media (min-width: 767.98px) {
-      #{$property}: calc(
-        #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 744))
-      );
+      #{$property}: calc(#{$tableSize}#{$unit} + ($desktopSize - $tableSize) * ((100vw - 767.98px) / ($maxWidth - 744px)));
     }
 
-    //закоментувати якщо має працювати понад максимальну ширину
-    @media (min-width: #{$maxWidth + px}) {
-      #{$property}: $decktopSize + px;
+    @media (min-width: $maxWidth) {
+      #{$property}: #{$desktopSize}#{$unit};
     }
   }
 }
+// @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
+//   $maxWidth: $container-max-width;
+//   $addSize: $decktopSize - $mobileSize;
+
+//   @if ($tableSize == 0) {
+//     #{$property}: $decktopSize + px;
+//     //працює понад максимальну ширину
+//     // #{$property} : calc(#{$mobileSize  + px} + #{$decktopSize -  $mobileSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+
+//     // працює до максимальної ширини
+//     @media (max-width: #{$maxWidth + px}) {
+//       #{$property}: calc(#{$mobileSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidth} - 360)));
+//     }
+//   } @else if ($tableSize > 0) {
+//     #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 360px) / #{744 - 360}));
+
+//     @media (min-width: 767.98px) {
+//       #{$property}: calc(
+//         #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 744))
+//       );
+//     }
+
+//     //закоментувати якщо має працювати понад максимальну ширину
+//     @media (min-width: #{$maxWidth + px}) {
+//       #{$property}: $decktopSize + px;
+//     }
+//   }
+// }
 @mixin positiion-r {
   position: relative;
   left: 0;
@@ -122,25 +144,3 @@
 // }
 
 // ######################################
-// @mixin adaptive-property($property, $mobileSize, $tableSize, $desktopSize, $unit: px) {
-//   $maxWidth: 1280px;
-//   $minWidth: 320px;
-
-//   @if ($tableSize == 0) {
-//     #{$property}: #{$desktopSize}#{$unit};
-
-//     @media (max-width: $maxWidth) {
-//       #{$property}: calc(#{$mobileSize}#{$unit} + ($desktopSize - $mobileSize) * ((100vw - #{$minWidth}) / ($maxWidth - $minWidth)));
-//     }
-//   } @else {
-//     #{$property}: calc(#{$mobileSize}#{$unit} + ($tableSize - $mobileSize) * ((100vw - #{$minWidth}) / (744px - $minWidth)));
-
-//     @media (min-width: 767.98px) {
-//       #{$property}: calc(#{$tableSize}#{$unit} + ($desktopSize - $tableSize) * ((100vw - 767.98px) / ($maxWidth - 744px)));
-//     }
-
-//     @media (min-width: $maxWidth) {
-//       #{$property}: #{$desktopSize}#{$unit};
-//     }
-//   }
-// }

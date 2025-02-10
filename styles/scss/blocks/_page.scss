@@ -21,8 +21,13 @@ html {
   overflow-x: clip;
 }
 [class*="__container"] {
-  max-width: 1280px;
-  @include adaptive-property(padding-inline, 10, 20, 40);
+  max-width: 1980px;
+  @include adaptive-property(padding-inline, 20, 44, 120);
   margin: 0 auto;
   overflow-x: clip;
+}
+
+.roboto {
+  font-family: "Roboto", serif;
+  font-weight: 700;
 }
