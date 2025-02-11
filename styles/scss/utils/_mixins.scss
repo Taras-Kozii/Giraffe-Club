@@ -8,65 +8,34 @@
     @content;
   }
 }
-@mixin font($font_name, $file_name, $weight, $style) {
-	@font-face {
-		font-family: $font_name;
-		font-display: swap;
-		src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
-		font-weight: #{$weight};
-		font-style: #{$style};
-	}
-}
-@mixin adaptive-property($property, $mobileSize, $tableSize, $desktopSize, $unit: px) {
-  $maxWidth: 1980px;
-  $minWidth: 360px;
+@mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
+  $maxWidth: $container-max-width;
+  $addSize: $decktopSize - $mobileSize;
 
   @if ($tableSize == 0) {
-    #{$property}: #{$desktopSize}#{$unit};
+    #{$property}: $decktopSize + px;
+    //працює понад максимальну ширину
+    // #{$property} : calc(#{$mobileSize  + px} + #{$decktopSize -  $mobileSize} * ((100vw - 320px) / #{$maxWidth - 320}));
 
-    @media (max-width: $maxWidth) {
-      #{$property}: calc(#{$mobileSize}#{$unit} + ($desktopSize - $mobileSize) * ((100vw - #{$minWidth}) / ($maxWidth - $minWidth)));
+    // працює до максимальної ширини
+    @media (max-width: #{$maxWidth + px}) {
+      #{$property}: calc(#{$mobileSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidth} - 360)));
     }
-  } @else {
-    #{$property}: calc(#{$mobileSize}#{$unit} + ($tableSize - $mobileSize) * ((100vw - #{$minWidth}) / (744px - $minWidth)));
+  } @else if ($tableSize > 0) {
+    #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 360px) / #{744 - 360}));
 
     @media (min-width: 767.98px) {
-      #{$property}: calc(#{$tableSize}#{$unit} + ($desktopSize - $tableSize) * ((100vw - 767.98px) / ($maxWidth - 744px)));
+      #{$property}: calc(
+        #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 744))
+      );
     }
 
-    @media (min-width: $maxWidth) {
-      #{$property}: #{$desktopSize}#{$unit};
+    //закоментувати якщо має працювати понад максимальну ширину
+    @media (min-width: #{$maxWidth + px}) {
+      #{$property}: $decktopSize + px;
     }
   }
 }
-// @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
-//   $maxWidth: $container-max-width;
-//   $addSize: $decktopSize - $mobileSize;
-
-//   @if ($tableSize == 0) {
-//     #{$property}: $decktopSize + px;
-//     //працює понад максимальну ширину
-//     // #{$property} : calc(#{$mobileSize  + px} + #{$decktopSize -  $mobileSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-
-//     // працює до максимальної ширини
-//     @media (max-width: #{$maxWidth + px}) {
-//       #{$property}: calc(#{$mobileSize}px + #{$addSize} * ((100vw - 360px) / (#{$maxWidth} - 360)));
-//     }
-//   } @else if ($tableSize > 0) {
-//     #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 360px) / #{744 - 360}));
-
-//     @media (min-width: 767.98px) {
-//       #{$property}: calc(
-//         #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 744))
-//       );
-//     }
-
-//     //закоментувати якщо має працювати понад максимальну ширину
-//     @media (min-width: #{$maxWidth + px}) {
-//       #{$property}: $decktopSize + px;
-//     }
-//   }
-// }
 @mixin positiion-r {
   position: relative;
   left: 0;
@@ -90,6 +59,10 @@
   display: flex;
   justify-content: $position;
   align-items: center;
+}
+@mixin flex($position: center) {
+  display: flex;
+  justify-content: $position;
 }
 @mixin screen-hover {
   @media (hover: none) {
@@ -128,28 +101,3 @@
     }
   }
 }
-
-// @mixin adaptive-property($property, $mobileSize, $tableSize, $desktopSize) {
-//   $maxWidth: 1280px;
-//   $minWidth: 320px;
-
-//   @if ($tableSize == 0) {
-//     #{$property}: $desktopSize + px;
-
-//     @media (max-width: $maxWidth) {
-//       #{$property}: calc(#{$mobileSize}px + ($desktopSize - $mobileSize) * ((100vw - #{$minWidth}) / ($maxWidth - $minWidth)));
-//     }
-//   } @else {
-//     #{$property}: calc(#{$mobileSize}px + ($tableSize - $mobileSize) * ((100vw - #{$minWidth}) / (744px - $minWidth)));
-
-//     @media (min-width: 767.98px) {
-//       #{$property}: calc(#{$tableSize}px + ($desktopSize - $tableSize) * ((100vw - 767.98px) / ($maxWidth - 744px)));
-//     }
-
-//     @media (min-width: $maxWidth) {
-//       #{$property}: $desktopSize + px;
-//     }
-//   }
-// }
-
-// ######################################

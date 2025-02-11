@@ -1,0 +1,6 @@
+.main {
+  &__section {
+    @include adaptive-property(padding-top, 48, 68, 108);
+    @include adaptive-property(padding-bottom, 64, 98, 120);
+  }
+}
