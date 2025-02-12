@@ -13,7 +13,7 @@
 
   @include onDesktop {
     font-family: "Bookman Old Style";
-    font-weight: 600;
+    font-weight: bold;
   }
 }
 %button {
@@ -26,8 +26,8 @@
   @include adaptive-property(padding-inline, 16, 30, 42);
   @include adaptive-property(padding-block, 10, 15, 20);
   @include onDesktop {
-    font-family: "Bookman Old Style Regular";
-    font-weight: 300;
+    font-family: "Bookman Old Style";
+    font-weight: bold;
   }
   &:hover {
     background-color: #DF803E;
