@@ -20,6 +20,7 @@
   font-family: "Roboto", serif;
   font-weight: 400;
   background-color: #FCFCFC;
+  border-radius: 10px;
   transition: $transition-duraction ease-in;
   @include adaptive-property(font-size, 14, 20, 26);
   @include adaptive-property(line-height, 16, 24, 31);
@@ -27,7 +28,7 @@
   @include adaptive-property(padding-block, 10, 15, 20);
   @include onDesktop {
     font-family: "Bookman Old Style";
-    font-weight: bold;
+    font-weight: 300;
   }
   &:hover {
     background-color: #DF803E;

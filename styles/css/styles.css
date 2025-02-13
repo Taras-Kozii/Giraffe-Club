@@ -2,6 +2,7 @@
   font-family: "Roboto", serif;
   font-weight: 400;
   background-color: #FCFCFC;
+  border-radius: 10px;
   -webkit-transition: 0.4s ease-in;
   transition: 0.4s ease-in;
   font-size: calc(14px + 6 * (100vw - 360px) / 384);
@@ -52,7 +53,7 @@
 @media (min-width: 1023px) {
   .hero__button {
     font-family: "Bookman Old Style";
-    font-weight: bold;
+    font-weight: 300;
   }
 }
 .hero__button:hover {
@@ -236,4 +237,8 @@ html {
   .main__section {
     padding-bottom: 120px;
   }
+}
+
+.hero {
+  background-color: #DF803E;
 }

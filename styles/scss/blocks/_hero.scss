@@ -1,4 +1,5 @@
 .hero {
+  background-color: $bg-color-red;
   &__button {
     @extend %button;
     
