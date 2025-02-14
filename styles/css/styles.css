@@ -57,11 +57,11 @@
   }
 }
 .hero__button:hover {
-  background-color: #DF803E;
+  color: #DF803E;
 }
 @media (hover: none) {
   .hero__button:active {
-    background-color: #DF803E;
+    color: #DF803E;
   }
 }
 .hero__button:disabled {
@@ -241,4 +241,40 @@ html {
 
 .hero {
   background-color: #DF803E;
+}
+.hero__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.hero__img {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: calc(140px + 220 * (100vw - 360px) / 384);
+  aspect-ratio: 0.7179/1;
+}
+@media (min-width: 767.98px) {
+  .hero__img {
+    width: calc(360px + 179 * (100vw - 767.98px) / (1980 - 744));
+  }
+}
+@media (min-width: 1980px) {
+  .hero__img {
+    width: 539px;
+  }
+}
+.hero__img img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }

@@ -31,10 +31,10 @@
     font-weight: 300;
   }
   &:hover {
-    background-color: #DF803E;
+    color: #DF803E;
   }
   @include screen-hover {
-    background-color: #DF803E;
+    color: #DF803E;
   }
   &:disabled {
     color: $text-color-gray;

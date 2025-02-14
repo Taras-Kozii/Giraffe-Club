@@ -1,5 +1,17 @@
 .hero {
   background-color: $bg-color-red;
+  &__content {
+  @include flex(space-between);
+  }
+  &__img {
+    @include positiion-r;
+    @include adaptive-property(width, 140, 360, 539);
+    aspect-ratio: 0.7179 / 1;
+
+    img {
+      @include ibg;
+    }
+  }
   &__button {
     @extend %button;
     
