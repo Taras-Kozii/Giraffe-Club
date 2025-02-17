@@ -1,0 +1,5 @@
+.about {
+  &__titles {
+    @include adaptive-property(margin-bottom, 20, 40, 60);
+  }
+}

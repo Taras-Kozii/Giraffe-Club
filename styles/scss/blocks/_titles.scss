@@ -1,0 +1,17 @@
+.titles {
+  width: 100%;
+  display: flex;
+
+
+  &__subtitle {
+    @extend %section-subtitle;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &__title {
+    margin-right: auto;
+    text-align: center;
+    color: $bg-color-red;
+    @extend %section-title;
+  }
+}

@@ -19,8 +19,8 @@ html {
   overflow-x: clip;
 }
 [class*="__container"] {
-  max-width: 1980px;
-  @include adaptive-property(padding-inline, 20, 44, 120);
+  max-width: 1800px;
+  @include adaptive-property(padding-inline, 20, 44, 60);
   margin: 0 auto;
   overflow-x: clip;
 }

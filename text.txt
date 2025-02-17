@@ -3,7 +3,7 @@
 
 
               <div class="titles about__titles">
-                <h3 class="titles__subtitle">Про нас</h3>
-                <h2 class="titles__title">Мовних шкіл багато - лідер один!</h2>
+                <h3 class="titles__title">Про нас</h3>
+                <h2 class="titles__subtitle">Мовних шкіл багато - лідер один!</h2>
               </div>
 

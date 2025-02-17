@@ -1,12 +1,51 @@
 .hero {
   background-color: $bg-color-red;
+  @include p-margin;
+  @include positiion-r;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 52%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 26vw 50vw 26vw 0;
+    border-color: transparent #fff transparent transparent;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
   &__content {
+  @include positiion-r;
   @include flex(space-between);
+  }
+  &__text-content {
+    width: 52%;
+    margin-top: 46px;
+  }
+  &__title {
+    @include adaptive-property(font-size, 52, 70, 90);
+    @include adaptive-property(margin-bottom, 8, 16, 24);
+    font-weight: 600;
+    line-height: 117.777778%; /* 106px/90 */
+  }
+  &__text {
+    @include adaptive-property(font-size, 30, 40, 50);
+    @include adaptive-property(margin-bottom, 16, 50, 90);
+    font-weight: 300;
+    line-height: 110%;
+
+    @include onTablet {
+      line-height: 130%;
+
+    }
   }
   &__img {
     @include positiion-r;
     @include adaptive-property(width, 140, 360, 539);
-    aspect-ratio: 0.7179 / 1;
+    aspect-ratio: 0.7082 / 1;
+    z-index: 5;
 
     img {
       @include ibg;
