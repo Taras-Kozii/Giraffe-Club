@@ -101,3 +101,10 @@
     }
   }
 }
+@mixin cards-flex($column-gap, $row-gap) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 4.88%;
+  row-gap: 42px;
+}

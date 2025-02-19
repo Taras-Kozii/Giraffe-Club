@@ -2,4 +2,31 @@
   &__titles {
     @include adaptive-property(margin-bottom, 20, 40, 60);
   }
+  &__items {
+    @include cards-flex(2.44%, 4.88%);
+  }
+}
+.item {
+  flex-shrink: 1;
+  @include adaptive-property(flex-basis, 280, 320, 408);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include adaptive-property(padding-inline, 24, 36, 59);
+  @include adaptive-property(padding-block, 18, 30, 53);
+  border: 2px solid $text-color-dark;
+  border-radius: 20px;
+  text-align: center;
+
+  &__img {
+    @include positiion-r;
+    width: 190px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 17px;
+
+    img {
+      @include ibg(contain);
+    }
+  }
 }

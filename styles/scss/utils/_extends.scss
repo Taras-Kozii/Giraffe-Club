@@ -3,6 +3,7 @@
   @include adaptive-property(font-size, 24, 35, 50);
   font-weight: 300;
   font-style: normal;
+  text-align: left;
 }
 %section-title {
   font-family: "Roboto", serif;
