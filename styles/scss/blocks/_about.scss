@@ -1,4 +1,8 @@
 .about {
+  &__content {
+    @include positiion-r;
+    z-index: 3;
+  }
   &__titles {
     @include adaptive-property(margin-bottom, 20, 40, 60);
   }
@@ -8,25 +12,26 @@
 }
 .item {
   flex-shrink: 1;
-  @include adaptive-property(flex-basis, 280, 320, 408);
+  @include adaptive-property(flex-basis, 150, 280, 408);
   aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include adaptive-property(padding-inline, 24, 36, 59);
-  @include adaptive-property(padding-block, 18, 30, 53);
+  @include adaptive-property(padding-inline, 9, 16, 21);
+  @include adaptive-property(padding-block, 12, 26, 53);
   border: 2px solid $text-color-dark;
   border-radius: 20px;
   text-align: center;
 
   &__img {
     @include positiion-r;
-    width: 190px;
+    @include adaptive-property(width, 66, 130, 190);
     aspect-ratio: 1 / 1;
     margin-bottom: 17px;
+    overflow: hidden;
 
     img {
-      @include ibg(contain);
+      @include ibg(cover);
     }
   }
 }
