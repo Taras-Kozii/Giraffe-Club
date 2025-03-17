@@ -14,17 +14,18 @@
   top: 0;
 }
 @mixin ibg($size: cover) {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: $size;
-  object-position: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: $size;
+    object-position: center;
+  }
 }
 @mixin p-margin {
   &__text p:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 }
 @mixin flex-center($position: center) {
@@ -35,13 +36,6 @@
 @mixin flex($position: center) {
   display: flex;
   justify-content: $position;
-}
-@mixin screen-hover {
-  @media (hover: none) {
-    &:active {
-      @content;
-    }
-  }
 }
 @mixin hover-line($color: $text-color-dark) {
   position: relative;
@@ -78,7 +72,7 @@
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 4.88%;
-  row-gap: 42px;
+  row-gap: 2.625rem;
 }
 
 @function get-value($min-width, $max-width, $size-at-min-width, $size-at-max-width, $unit) {
@@ -92,12 +86,12 @@
   @return ($min-value * 100%) / $max-value;
 }
 @mixin adaptive-property($property, $mobile-size, $tablet-size, $desktop-size, $unit: px) {
-  $max-width: 1230;
+  $max-width: 1710;
   $min-width: 320;
   $tablet-width: 767.98;
 
   @if ($unit == rem) {
-    $max-width: 1230 / 16;
+    $max-width: 1710 / 16;
     $min-width: 320 / 16;
     $tablet-width: 767.98 / 16;
   }
@@ -105,7 +99,7 @@
   @if ($tablet-size == 0) {
     #{$property}: $desktop-size + $unit;
 
-    @media (max-width: 1230px) {
+    @media (max-width: 1710px) {
       #{$property}: get-value($min-width, $max-width, $mobile-size, $desktop-size, $unit);
     }
   } @else {
@@ -114,7 +108,7 @@
     @media (min-width: 767.98px) {
       #{$property}: get-value($tablet-width, $max-width, $tablet-size, $desktop-size, $unit);
     }
-    @media (min-width: 1230px) {
+    @media (min-width: 1710px) {
       #{$property}: $desktop-size + $unit;
     }
   }
