@@ -4,7 +4,7 @@
     z-index: 3;
   }
   &__titles {
-    @include adaptive-property(margin-bottom, 20, 40, 60);
+    @include adaptive-property(margin-bottom, 1.25, 2.5, 4.0625, rem);
   }
   &__items {
     @include cards-flex(2.44%, 4.88%);
@@ -17,21 +17,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include adaptive-property(padding-inline, 9, 16, 21);
-  @include adaptive-property(padding-block, 12, 26, 53);
+  @include adaptive-property(padding-inline, 0.5625, 1, 1.3125, rem);
+  @include adaptive-property(padding-block, 0.75, 1.625, 3.3125, rem);
   border: 2px solid $text-color-dark;
   border-radius: 20px;
   text-align: center;
 
   &__img {
-    @include positiion-r;
     @include adaptive-property(width, 66, 130, 190);
     aspect-ratio: 1 / 1;
-    margin-bottom: 17px;
-    overflow: hidden;
-
-    img {
-      @include ibg(cover);
-    }
+    margin-bottom: 1.0625rem;
+    @include ibg;
   }
 }

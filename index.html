@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="./styles/css/styles.min.css" />
     <link rel="shortcut icon" href="./images/icons/favicon.ico" type="image/x-icon" />
+    <link rel="preload" as="image" imagesrcset="./images/giraffe-big.webp">
   </head>
   <body class="page">
     <div class="wrapper">
@@ -38,7 +39,14 @@
                 </button>
               </div>
               <div class="hero__img">
-                <img src="./images/фото 2.svg" alt="giraffe-photo">
+                <img
+                  src="./images/giraffe-big.webp"
+                  alt="giraffe-photo"
+                  decoding="async"
+                  width="140"
+                  height="195"
+                >
+
               </div>
             </div>
           </div>
@@ -47,8 +55,8 @@
           <div class="about__container">
             <div class="about__content">
               <div class="titles about__titles">
-                <h3 class="titles__title">Про нас</h3>
-                <h2 class="titles__subtitle">Мовних шкіл багато - лідер один!</h2>
+                <h3 class="titles__title section-title section-title--red">Про нас</h3>
+                <h2 class="titles__subtitle section-subtitle">Мовних шкіл багато - лідер один!</h2>
               </div>
               <div class="about__items">
                 <article class="item">
@@ -119,10 +127,10 @@
           <div class="services__container">
             <div class="services__content">
               <div class="titles services__titles">
-                <h3 class="titles__title">Напрямки роботи</h3>
-                <h2 class="titles__subtitle">Що ти можеш у нас знайти?</h2>
+                <h3 class="titles__title section-title section-title--white">Напрямки роботи</h3>
+                <h2 class="titles__subtitle section-subtitle">Що ти можеш у нас знайти?</h2>
               </div>
-              <ol class="services__list">
+              <ol class="services__list ol-list">
                 <li class="services__item">
                   Англійська для дітей від 1 року
                 </li>
@@ -155,11 +163,11 @@
           <div class="study__container">
             <div class="study__content">
               <div class="titles about__titles">
-                <h3 class="titles__title">Навчання</h3>
+                <h3 class="titles__title section-title">Навчання</h3>
               </div>
       <div class="study__content-body">
                   <div class="study__content-list">
-                    <h2 class="study__subtitle">
+                    <h2 class="study__subtitle section-subtitle">
                       Вивчення іноземної мови
                     </h2>
                     <ol class="study__list list">
@@ -204,8 +212,8 @@
           <div class="travels__container">
             <div class="travels__content">
               <div class="titles about__titles">
-                <h3 class="titles__title">Наші подорожі</h3>
-                <h2 class="titles__subtitle">Ми подорожуємо світом</h2>
+                <h3 class="titles__title section-title">Наші подорожі</h3>
+                <h2 class="titles__subtitle section-subtitle">Ми подорожуємо світом</h2>
               </div>
               <div class="tavels__text">
                 <p>
@@ -237,6 +245,6 @@
       </main>
       <footer class="page__footer footer">FOOTER</footer>
     </div>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/main.js" defer></script>
   </body>
 </html>

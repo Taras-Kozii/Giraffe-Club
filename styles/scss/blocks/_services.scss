@@ -1,0 +1,6 @@
+.services {
+  background-color: $bg-color-red;
+  &__titles {
+    @include adaptive-property(margin-bottom, 1.6875, 2.75, 4.0625, rem);
+  }
+}
