@@ -1,3 +1,67 @@
 .study {
   background-color: $bg-color;
+  &__content-body {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 40, 50, 64);
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  &__list {
+    @include adaptive-property(row-gap, 1, 1.75, 2.5, rem);
+  }
+  &__types {
+    order: 1;
+    @include onDesktop {
+      flex-basis: 40%;
+    }
+  }
+  &__format {
+    order: 2;
+
+    .list {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        column-gap: 6.2%;
+        row-gap: 1.5rem;
+        justify-content: center;
+      }
+    }
+
+  }
+  &__img {
+    aspect-ratio: 1.32 / 1;
+    @include ibg;
+    @include onDesktop {
+      aspect-ratio: 1.893 / 1;
+      flex-basis: 57%;
+      order: 2;
+    }
+    order: 3
+  }
+  &__subtitle {
+    text-align: center;
+  }
+  &__list-text {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 0.5, 0.8, 1, rem);
+  }
+  .list__disc {
+    font-family: "Roboto", serif;
+    @include adaptive-property(font-size, 1, 1.25, 1.625, rem);
+    @include adaptive-property(line-height, 19, 24, 31);
+    font-weight: 400;
+    font-style: normal;
+    color: $text-color-dark;
+    @include onDesktop {
+      font-family: "Bookman Old Style";
+      font-weight: 300;
+    }
+  }
 }

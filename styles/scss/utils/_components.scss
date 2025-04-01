@@ -92,6 +92,10 @@
   list-style: none;
   counter-reset: ol-item;
   list-style-position: inside;
+  ol {
+    display: flex;
+    flex-direction: column;
+  }
   li {
     @include positiion-r;
     display: flex;

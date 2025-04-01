@@ -42,8 +42,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: 4.88%;
-  row-gap: 2.625rem;
+  column-gap: $column-gap;
+  row-gap: $row-gap;
 }
 
 @function get-value($min-width, $max-width, $size-at-min-width, $size-at-max-width, $unit) {
