@@ -36,6 +36,7 @@
 }
 @mixin flex($position: center) {
   display: flex;
+  flex-wrap: wrap;
   justify-content: $position;
 }
 @mixin cards-flex($column-gap, $row-gap) {

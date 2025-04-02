@@ -3,7 +3,57 @@
   &__content {
     @include adaptive-property(padding-top, 48, 68, 112);
     @include adaptive-property(padding-bottom, 40, 98, 120);
-    @include flex-center(space-between);
-    flex-wrap: wrap;
+    @include flex(space-between);
+    column-gap: 16px;
+    row-gap: 16px;
   }
+}
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  justify-content: space-between;
+  @include adaptive-property(column-gap, 40, 80, 120);
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    @include onTablet {
+      row-gap: 1rem;
+    }
+  }
+  &__title, 
+  a {
+    font-family: "Roboto", serif;
+    @include adaptive-property(font-size, 0.875, 1, 1.125, rem);
+    @include adaptive-property(line-height, 1, 1.125, 1.3125, rem);
+    font-weight: 400;
+    font-style: normal;
+    color: $text-color-dark;
+
+    @include onDesktop {
+      font-family: "Bookman Old Style";
+      font-weight: 300;
+    }
+  }
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10px;
+  }
+}
+.socials {
+  display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+
+    @include onTablet {
+      row-gap: 1rem;
+    }
+    &__items {
+      @include flex;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
 }
