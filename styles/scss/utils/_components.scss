@@ -24,6 +24,18 @@
 .section-title--red {
   color: $bg-color-red
 }
+.logo {
+  @include adaptive-property(font-size, 20, 32, 42)
+font-size: 20px;
+font-weight: 600;
+line-height: 23px;
+
+
+@include onDesktop {
+font-size: 41.62px;
+line-height: 49px;
+}
+}
 //==================================BUTTON=========================================
 .button {
   font-family: "Roboto", serif;

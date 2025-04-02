@@ -1,0 +1,9 @@
+.footer {
+  background-color: $bg-color-red;
+  &__content {
+    @include adaptive-property(padding-top, 48, 68, 112);
+    @include adaptive-property(padding-bottom, 40, 98, 120);
+    @include flex-center(space-between);
+    flex-wrap: wrap;
+  }
+}

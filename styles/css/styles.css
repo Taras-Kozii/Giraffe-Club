@@ -59,6 +59,25 @@
   color: #DF803E;
 }
 
+.logo {
+  font-family: Bookman Old Style;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+@media (min-width: 1023px) {
+  .logo {
+    font-family: Bookman Old Style;
+    font-size: 41.62px;
+    font-weight: 600;
+    line-height: 49px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+
 .button {
   font-family: "Roboto", serif;
   font-weight: 400;
@@ -1067,5 +1086,44 @@ html {
   .study .list__disc {
     font-family: "Bookman Old Style";
     font-weight: 300;
+  }
+}
+
+.footer {
+  background-color: #DF803E;
+}
+.footer__content {
+  padding-top: calc(48px + (20) * (100vw - 360px) / (407.98));
+  padding-bottom: calc(40px + (58) * (100vw - 360px) / (407.98));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (min-width: 767.98px) {
+  .footer__content {
+    padding-top: calc(68px + (44) * (100vw - 767.98px) / (952.02));
+  }
+}
+@media (min-width: 1720px) {
+  .footer__content {
+    padding-top: 112px;
+  }
+}
+@media (min-width: 767.98px) {
+  .footer__content {
+    padding-bottom: calc(98px + (22) * (100vw - 767.98px) / (952.02));
+  }
+}
+@media (min-width: 1720px) {
+  .footer__content {
+    padding-bottom: 120px;
   }
 }
