@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     @include adaptive-property(row-gap, 40, 50, 64);
-
     @include onDesktop {
       flex-direction: row;
       flex-wrap: wrap;
@@ -30,6 +29,7 @@
         column-gap: 6.2%;
         row-gap: 1.5rem;
         justify-content: center;
+        align-items: start;
       }
     }
 
@@ -44,7 +44,11 @@
     }
     order: 3
   }
+  &__title {
+    @include adaptive-property(margin-bottom, 24, 0, 72);
+  }
   &__subtitle {
+    @include adaptive-property(margin-bottom, 24, 0, 64);
     text-align: center;
   }
   &__list-text {

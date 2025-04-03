@@ -3,12 +3,13 @@
   @include adaptive-property(font-size, 1.5, 2.1875, 3.125, rem);
   font-weight: 300;
   font-style: normal;
-  text-align: left;
+  text-align: center;
 }
 .section-title {
   font-family: "Roboto", serif;
   @include adaptive-property(font-size, 0.875, 1.25, 1.625, rem);
   @include adaptive-property(line-height, 16, 24, 31);
+  @include adaptive-property(margin-bottom, 24, 0, 5);
   font-weight: 700;
   font-style: normal;
   color: $text-color-dark;
@@ -81,24 +82,6 @@
     border: 2px solid $bg-color-red;
   }
 }
-//====================================================================================
-.titles {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  &__subtitle {
-    text-align: center;
-    margin: 0 auto;
-  }
-  &__title {
-    margin-bottom: 1.5rem;
-    @include onDesktop {
-      margin-bottom: 0;
-    }
-    text-align-last: left;
-  }
-}
 //=======================================OL-LIST===========================================
 .ol-list {
   list-style: none;
@@ -111,7 +94,7 @@
   li {
     @include positiion-r;
     display: flex;
-    align-items: center;
+    align-items: start;
     font-family: 'Roboto';
     @include adaptive-property(font-size, 1, 1.625, 2.125, rem);
     font-weight: 400;

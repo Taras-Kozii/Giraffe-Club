@@ -39,12 +39,11 @@
   flex-wrap: wrap;
   justify-content: $position;
 }
-@mixin cards-flex($column-gap, $row-gap) {
+@mixin cards-flex($column-gap) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   column-gap: $column-gap;
-  row-gap: $row-gap;
 }
 
 @function get-value($min-width, $max-width, $size-at-min-width, $size-at-max-width, $unit) {

@@ -3,11 +3,12 @@
     @include positiion-r;
     z-index: 3;
   }
-  &__titles {
-    @include adaptive-property(margin-bottom, 1.25, 2.5, 4.0625, rem);
+  &__subtitle {
+    @include adaptive-property(margin-bottom, 32, 0, 64);
   }
   &__items {
-    @include cards-flex(2.44%, 4.88%);
+    @include cards-flex(2.44%);
+    @include adaptive-property(row-gap, 20, 0, 40);
   }
 }
 .item {
