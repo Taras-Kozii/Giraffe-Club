@@ -2,44 +2,53 @@
   &__subtitle {
     @include adaptive-property(margin-bottom, 24, 0, 64);
   }
-  &__slider {
-    @include positiion-r;
-    max-width: 1330px;
-    margin: 0 auto;
-    min-height: 320px;
-    overflow: hidden;
-
-    @include onDesktop {
-      aspect-ratio: 4 / 1;
-    }
-  }
 }
 .slider {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0px auto;
+  max-width: 1330px;
+  min-height: 320px;
+  overflow-x: clip;
+
   &__content {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     display: flex;
-    height: 100%;
-    transition: 0.5s ease-in-out;  
+    min-height: 100%;
+    transition: 0.5s ease-in-out;   
   }
   &__buttons {
     position: absolute;
-    width: 90%;
-    left: 5%;
-    top: 45%;
+    width: 100%;
+    left: 0%;
+    top: 50%;
     display: flex;
     justify-content: space-between;
   }
   
   &__button {
-    width: 25px;
-    height: 25px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     transition: 0.5s;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__button#prev {
+    svg {
+      rotate: 180deg;
+    }
   }
   &__button:hover {
     background-color: #555;
@@ -48,10 +57,12 @@
 }
 .post {
   flex: 1 0 100%;
-  @include p-margin;
+  position: relative;
+  height: 100%;
   @include adaptive-property(padding, 16, 0, 48);
-  background-color: $bg-color-red;
   @include adaptive-property(border-radius, 11, 0, 20);
+  background-color: $bg-color-red;
+
   &__person {
     margin-bottom: 0.8125rem;
     padding-bottom: 1.125rem;
