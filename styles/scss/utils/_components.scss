@@ -82,6 +82,31 @@
     border: 2px solid $bg-color-red;
   }
 }
+.arrow {
+  @include adaptive-property(width, 66, 0, 106);
+  @include adaptive-property(height, 66, 0, 106);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $bg-color-red;
+  z-index: 22;
+  cursor: pointer;
+
+  svg {
+    @include adaptive-property(width, 36, 0, 60);
+    @include adaptive-property(height, 28, 0, 46);
+    path {
+      stroke: $bg-color-red;
+    }
+  }
+}
+.arrow:disabled {
+  border: 2px solid $text-color-light-gray;
+  svg path {
+    stroke: $text-color-gray;
+  }
+}
 //=======================================OL-LIST===========================================
 .ol-list {
   list-style: none;

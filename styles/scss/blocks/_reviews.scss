@@ -1,14 +1,35 @@
 .reviews {
+  @include adaptive-property(padding-top, 48, 68, 108);
+  @include adaptive-property(padding-bottom, 64, 98, 120);
   &__subtitle {
     @include adaptive-property(margin-bottom, 24, 0, 64);
   }
+  &__slider {
+    @include positiion-r;
+  }
+  &__buttons {
+    width: 100%;
+    transform: translateY(50%);
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktop {
+      position: absolute;
+      left: 0;
+      bottom: 50%;
+    }
+  }  
 }
 .slider {
-  position: relative;
-  left: 0;
-  top: 0;
+  @include positiion-r;
   margin: 0px auto;
-  max-width: 1330px;
+  @media (min-width: $desktop-min-width) {
+    max-width: 900px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 1330px;
+  }
   min-height: 320px;
   overflow-x: clip;
 
@@ -19,45 +40,11 @@
     width: 100%;
     display: flex;
     min-height: 100%;
-    transition: 0.5s ease-in-out;   
+    transition: 0.5s ease-in-out;
   }
-  &__buttons {
-    position: absolute;
-    width: 100%;
-    left: 0%;
-    top: 50%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  &__button {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-  &__button#prev {
-    svg {
-      rotate: 180deg;
-    }
-  }
-  &__button:hover {
-    background-color: #555;
-  }
-  
 }
 .post {
   flex: 1 0 100%;
-  position: relative;
   height: 100%;
   @include adaptive-property(padding, 16, 0, 48);
   @include adaptive-property(border-radius, 11, 0, 20);

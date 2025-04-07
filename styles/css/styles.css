@@ -222,6 +222,58 @@
   border: 2px solid #DF803E;
 }
 
+.arrow {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #DF803E;
+  z-index: 22;
+  cursor: pointer;
+}
+@media (max-width: 1720px) {
+  .arrow {
+    width: calc(66px + (40) * (100vw - 360px) / (1360));
+  }
+}
+@media (max-width: 1720px) {
+  .arrow {
+    height: calc(66px + (40) * (100vw - 360px) / (1360));
+  }
+}
+.arrow svg {
+  width: 60px;
+  height: 46px;
+}
+@media (max-width: 1720px) {
+  .arrow svg {
+    width: calc(36px + (24) * (100vw - 360px) / (1360));
+  }
+}
+@media (max-width: 1720px) {
+  .arrow svg {
+    height: calc(28px + (18) * (100vw - 360px) / (1360));
+  }
+}
+.arrow svg path {
+  stroke: #DF803E;
+}
+
+.arrow:disabled {
+  border: 2px solid #C9C9C9;
+}
+.arrow:disabled svg path {
+  stroke: #5C5C5C;
+}
+
 .ol-list {
   list-style: none;
   counter-reset: ol-item;
@@ -1175,7 +1227,18 @@ html {
 }
 
 .footer {
+  margin-top: calc(64px + (34) * (100vw - 360px) / (407.98));
   background-color: #DF803E;
+}
+@media (min-width: 767.98px) {
+  .footer {
+    margin-top: calc(98px + (22) * (100vw - 767.98px) / (952.02));
+  }
+}
+@media (min-width: 1720px) {
+  .footer {
+    margin-top: 120px;
+  }
 }
 .footer__content {
   padding-top: calc(48px + (20) * (100vw - 360px) / (407.98));
@@ -1341,6 +1404,30 @@ html {
   row-gap: 10px;
 }
 
+.reviews {
+  padding-top: calc(48px + (20) * (100vw - 360px) / (407.98));
+  padding-bottom: calc(64px + (34) * (100vw - 360px) / (407.98));
+}
+@media (min-width: 767.98px) {
+  .reviews {
+    padding-top: calc(68px + (40) * (100vw - 767.98px) / (952.02));
+  }
+}
+@media (min-width: 1720px) {
+  .reviews {
+    padding-top: 108px;
+  }
+}
+@media (min-width: 767.98px) {
+  .reviews {
+    padding-bottom: calc(98px + (22) * (100vw - 767.98px) / (952.02));
+  }
+}
+@media (min-width: 1720px) {
+  .reviews {
+    padding-bottom: 120px;
+  }
+}
 .reviews__subtitle {
   margin-bottom: 64px;
 }
@@ -1349,15 +1436,49 @@ html {
     margin-bottom: calc(24px + (40) * (100vw - 360px) / (1360));
   }
 }
+.reviews__slider {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.reviews__buttons {
+  width: 100%;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .reviews__buttons {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+  }
+}
 
 .slider {
   position: relative;
   left: 0;
   top: 0;
   margin: 0px auto;
-  max-width: 1330px;
   min-height: 320px;
   overflow-x: clip;
+}
+@media (min-width: 1200px) {
+  .slider {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1440px) {
+  .slider {
+    max-width: 1330px;
+  }
 }
 .slider__content {
   position: absolute;
@@ -1371,47 +1492,11 @@ html {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-.slider__buttons {
-  position: absolute;
-  width: 100%;
-  left: 0%;
-  top: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.slider__button {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.slider__button svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-.slider__button#prev svg {
-  rotate: 180deg;
-}
-.slider__button:hover {
-  background-color: #555;
-}
 
 .post {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
-  position: relative;
   height: 100%;
   padding: 48px;
   border-radius: 20px;
