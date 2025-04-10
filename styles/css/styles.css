@@ -1437,67 +1437,18 @@ html {
   }
 }
 .reviews__slider {
-  position: relative;
-  left: 0;
-  top: 0;
+  width: 1330px;
 }
-.reviews__buttons {
-  width: 100%;
-  -webkit-transform: translateY(50%);
-      -ms-transform: translateY(50%);
-          transform: translateY(50%);
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-@media (min-width: 1200px) {
-  .reviews__buttons {
-    position: absolute;
-    left: 0;
-    bottom: 50%;
+@media (max-width: 1720px) {
+  .reviews__slider {
+    width: calc(320px + (1010) * (100vw - 360px) / (1360));
   }
-}
-
-.slider {
-  position: relative;
-  left: 0;
-  top: 0;
-  margin: 0px auto;
-  min-height: 320px;
-  overflow-x: clip;
-}
-@media (min-width: 1200px) {
-  .slider {
-    max-width: 900px;
-  }
-}
-@media (min-width: 1440px) {
-  .slider {
-    max-width: 1330px;
-  }
-}
-.slider__content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100%;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
 }
 
 .post {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
-  height: 100%;
   padding: 48px;
   border-radius: 20px;
   background-color: #DF803E;
