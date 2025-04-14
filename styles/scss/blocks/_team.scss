@@ -1,0 +1,18 @@
+.team {
+  background-color: $bg-color-red;
+  &__subtitle {
+    @include adaptive-property(margin-bottom, 24, 0, 64);
+  }
+  &__slider {
+    @include positiion-r;
+  }
+}
+.team-item {
+  flex-shrink: 0;
+  width: 100%;
+  @include adaptive-property(width, 255, 0, 400);
+  @include adaptive-property(padding, 16, 0, 40);
+  background-color: #FCFCFC;
+  @include adaptive-property(border-radius, 8, 0, 14);
+  cursor: pointer;
+}
