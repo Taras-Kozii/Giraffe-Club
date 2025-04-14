@@ -101,6 +101,14 @@
     }
   }
 }
+.arrow--white {
+  border: 2px solid #FCFCFC;
+  svg {
+    path {
+      stroke: #FCFCFC;
+    }
+  }
+}
 .arrow:disabled {
   border: 2px solid $text-color-light-gray;
   svg path {
