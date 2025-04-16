@@ -51,7 +51,7 @@
     font-weight: 600;
     line-height: 117.777778%; /* 106px/90 */
     @include positiion-r;
-    z-index: 10;
+    z-index: 5;
   }
   &__text {
     @include adaptive-property(font-size, 1.875, 2.5, 3.125, rem);
@@ -59,7 +59,7 @@
     font-weight: 300;
     line-height: 110%;
     @include positiion-r;
-    z-index: 10;
+    z-index: 5;
 
     @include onTablet {
       line-height: 130%;
@@ -73,7 +73,7 @@
   }
   &__button {
     @include positiion-r;
-    z-index: 6;
+    z-index: 5;
     align-self: center;
     width: max-content;
     margin-bottom: 0.3125rem;

@@ -1,4 +1,38 @@
 'use strict';
+const page = document.querySelector('.page');
+const header = document.querySelector('.header');
+const burgerIcon = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('[data-goto]');
+
+if (burgerIcon) {
+  burgerIcon.addEventListener('click', e => {
+    burgerIcon.classList.toggle('active');
+    menu.classList.toggle('active');
+    page.classList.toggle('lock');
+  });
+  for (const link of menuLinks) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const block = document.querySelector(link.dataset.goto);
+
+      const valueToBlock = block.getBoundingClientRect().top + pageYOffset - header.offsetHeight;
+      if (burgerIcon.classList.contains('active')) {
+				page.classList.remove('lock');
+				burgerIcon.classList.remove('active');
+				menu.classList.remove('active');
+			}
+
+
+      window.scrollTo({
+        top: valueToBlock,
+        behavior: "smooth",
+      })
+    })
+  }
+}
+
+//================================SWIPER=================================
 const reviewsSlider = new Swiper('.reviews__slider .swiper', {
   navigation: {
     nextEl: '.reviews__slider .slider__button-next',

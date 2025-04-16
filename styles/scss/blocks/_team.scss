@@ -16,7 +16,7 @@
 }
 .team-item {
   flex-shrink: 0;
-  max-width: 100%;
+  width: 100%;
   @include adaptive-property(width, 255, 0, 400);
   background-color: #FCFCFC;
   @include adaptive-property(border-radius, 8, 0, 14);
@@ -45,9 +45,9 @@
     @include ibg;
     img {
       margin-top: 17px;
-    }
-    @include onDesktop {
-      margin-top: 0px;
+      @include onDesktop {
+        margin-top: 0px;
+      }
     }
   }
   &__name {

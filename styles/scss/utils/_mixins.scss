@@ -10,6 +10,11 @@
     @content;
   }
 }
+@mixin onLaptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
 @mixin positiion-r {
   position: relative;
   left: 0;
