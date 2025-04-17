@@ -5,29 +5,28 @@ const burgerIcon = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('[data-goto]');
 
+//===============================MENU-BURGER===========================================
 if (burgerIcon) {
   burgerIcon.addEventListener('click', e => {
+    lockPage();
     burgerIcon.classList.toggle('active');
     menu.classList.toggle('active');
-    page.classList.toggle('lock');
   });
   for (const link of menuLinks) {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const block = document.querySelector(link.dataset.goto);
-
       const valueToBlock = block.getBoundingClientRect().top + pageYOffset - header.offsetHeight;
-      if (burgerIcon.classList.contains('active')) {
-				page.classList.remove('lock');
-				burgerIcon.classList.remove('active');
-				menu.classList.remove('active');
-			}
-
-
+      
       window.scrollTo({
         top: valueToBlock,
         behavior: "smooth",
-      })
+      });
+      if (burgerIcon.classList.contains('active')) {
+        menu.classList.remove('active');
+				burgerIcon.classList.remove('active');
+        lockPage();
+			}
     })
   }
 }
@@ -66,7 +65,6 @@ const teamSlider = new Swiper('.slider-team .swiper', {
 	observeParents: true,
 	observeSlideChildren: true,
 
-
   breakpoints: {
 		360: {
 			slidesPerView: 1.36,
@@ -89,3 +87,16 @@ const teamSlider = new Swiper('.slider-team .swiper', {
     pageUpDown: true,
   },
 });
+
+//================================FUNCTIONS=============================
+function setFixPadding(paddingRight) {
+  const items = document.querySelectorAll('.right-fix-padding');
+  for (const item of items) {
+    item.style.paddingRight = paddingRight;
+  }
+}
+function lockPage() {
+  const rightPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
+  setFixPadding(rightPaddingValue);
+  page.classList.toggle('lock');
+}

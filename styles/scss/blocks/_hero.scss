@@ -51,7 +51,7 @@
     font-weight: 600;
     line-height: 117.777778%; /* 106px/90 */
     @include positiion-r;
-    z-index: 5;
+    z-index: 3;
   }
   &__text {
     @include adaptive-property(font-size, 1.875, 2.5, 3.125, rem);
@@ -59,7 +59,7 @@
     font-weight: 300;
     line-height: 110%;
     @include positiion-r;
-    z-index: 5;
+    z-index: 3;
 
     @include onTablet {
       line-height: 130%;
@@ -68,12 +68,12 @@
   &__img {
     @include adaptive-property(width, 140, 360, 539);
     aspect-ratio: 0.7082 / 1;
-    z-index: 5;
+    z-index: 2;
     @include ibg;
   }
   &__button {
     @include positiion-r;
-    z-index: 5;
+    z-index: 3;
     align-self: center;
     width: max-content;
     margin-bottom: 0.3125rem;

@@ -40,7 +40,7 @@
       background-image: url('../../images/giraffe-big.webp');
       background-repeat: no-repeat;
       background-size: contain;
-      z-index: 20;
+      z-index: 2;
 
       @include onDesktop {
         background-size: cover;
