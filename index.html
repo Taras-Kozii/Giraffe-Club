@@ -213,7 +213,10 @@
                     екзаменів Cambrige
                   </p>
                 </div>
-                <button type="button" class="hero__button button">
+                <button
+                  type="button" 
+                  class="hero__button button open-popup" 
+                  data-popup="get-info">
                   Отримати консультацію
                 </button>
               </div>
@@ -319,7 +322,8 @@
               </ol>
               <button
                 type="button"
-                class="services__button button button--leave"
+                class="services__button button button--leave open-popup"
+                data-popup="send-order"
               >
                 Залишити заявку
               </button>
@@ -828,7 +832,37 @@
         </div>
       </footer>
     </div>
+    <dialog class="page__popup popup  popup--send" id="get-info">
+      <div class="popup__content">
+        <h4 class="popup__title">Отримай консультацію</h4>
+        <button type="button" class="popup__close" id="close-get-info"></button>
+        <form action="#" method="post" class="popup__form form-popup">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ім'я"
+            required
+            minlength="3"
+            class="form-popup__item"
+          />
+          <input
+            type="tel" 
+            name="phone-number" 
+            id="phone-number"
+            placeholder="Номер тел."
+            required
+            minlength="10"
+            class="form-popup__item"
+          >
+          <button type="submit" class="button button--send">Надіслати</button>
+        </form>
+      </div>
+    </dialog>
     <script src="./scripts/main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" async></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      async
+    ></script>
   </body>
 </html>

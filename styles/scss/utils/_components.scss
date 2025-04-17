@@ -76,10 +76,10 @@
   @include adaptive-property(padding-inline, 1.375, 2.75, 4.125, rem);
   @include adaptive-property(padding-block, 0.625, 0.9375, 1.25, rem);
   background-color: $bg-color-red;
+  border: 2px solid $bg-color-red;
   &:hover {
     background-color: #FCFCFC;
     color: $bg-color-red;
-    border: 2px solid $bg-color-red;
   }
 }
 .arrow {
@@ -152,5 +152,75 @@
     content: counter(ol-item, decimal-leading-zero);
     border-radius: 50%;
     border: 2px solid currentColor;
+  }
+}
+//====================================POPUP===================================
+.popup {
+  &__content {
+    @include positiion-r;
+    @include adaptive-property(width, 240, 0, 550);
+    @include adaptive-property(padding, 20, 0, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color-white;
+  }
+  &__title {
+    font-size: 2.125rem;
+    text-align: center;
+    @include adaptive-property(margin-bottom, 20, 0, 42);
+  }
+  &__close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50%;
+      background-color: $text-color-dark;
+      border-radius: 2px;
+    }
+    &::after {
+      rotate: 45deg;
+    }
+    &:before {
+      rotate: -45deg;
+    }
+  }
+}
+.popup::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-popup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  &__item {
+    @include adaptive-property(padding-block, 8, 0, 16);
+    background-color: $bg-color-white;
+    border-bottom: 2px solid $text-color-dark;
+  }
+  &__item::placeholder {
+    color: $text-color-gray;
+    font-size: 1.625rem;
+    line-height: 120%;
+  }
+  &__item:last-of-type {
+    @include adaptive-property(margin-bottom, 24, 0, 64);
   }
 }

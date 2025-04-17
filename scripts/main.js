@@ -4,6 +4,9 @@ const header = document.querySelector('.header');
 const burgerIcon = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('[data-goto]');
+const popups = document.querySelectorAll('.popup');
+const openPopupButtons = document.querySelectorAll('.open-popup');
+const formInPopupItems = document.querySelectorAll('.popup .form-popup');
 
 //===============================MENU-BURGER===========================================
 if (burgerIcon) {
@@ -27,6 +30,30 @@ if (burgerIcon) {
 				burgerIcon.classList.remove('active');
         lockPage();
 			}
+    })
+  }
+}
+//================================POPUP==================================
+if (popups.length && openPopupButtons.length) {
+  for (const button of openPopupButtons) {
+    button.addEventListener('click', () => {
+      const popup = [...popups].find(item => item.id == button.dataset.popup);
+      const closePopup = popup.querySelector('.popup__close');
+      if (closePopup) {
+        closePopup.addEventListener('click', () => {
+          popup.close();
+        });
+      }
+      popup.showModal();
+    });
+  }
+}
+if (popups.length && formInPopupItems.length) {
+  for (const form of formInPopupItems) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      form.reset();
+      form.closest('.popup').close();
     })
   }
 }
