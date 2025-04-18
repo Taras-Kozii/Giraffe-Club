@@ -35,25 +35,28 @@ if (burgerIcon) {
 }
 //================================POPUP==================================
 if (popups.length && openPopupButtons.length) {
+  for (const popup of popups) {
+    const closePopup = popup.querySelector('.popup__close');
+    if (closePopup) {
+      closePopup.addEventListener('click', () => {
+        popup.close();
+      })
+    }
+  }
   for (const button of openPopupButtons) {
     button.addEventListener('click', () => {
       const popup = [...popups].find(item => item.id == button.dataset.popup);
-      const closePopup = popup.querySelector('.popup__close');
-      if (closePopup) {
-        closePopup.addEventListener('click', () => {
-          popup.close();
-        });
-      }
       popup.showModal();
     });
   }
 }
-if (popups.length && formInPopupItems.length) {
+if (formInPopupItems.length) {
   for (const form of formInPopupItems) {
     form.addEventListener('submit', e => {
       e.preventDefault();
       form.reset();
       form.closest('.popup').close();
+      document.querySelector('#success-info').showModal();
     })
   }
 }

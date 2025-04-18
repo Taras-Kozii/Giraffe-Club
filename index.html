@@ -33,7 +33,9 @@
         <div class="header__container">
           <div class="header__content">
             <div class="header__top-icons top-icons">
-              <a href="#" class="header__logo logo">Giraffe Club</a>
+              <a href="#" class="header__logo logo">
+                Giraffe Club
+              </a>
               <div class="header__burger burger">
                 <span></span>
               </div>
@@ -780,7 +782,9 @@
       <footer class="page__footer footer">
         <div class="footer__container">
           <div class="footer__content">
-            <a href="#" class="footer__logo logo">Giraffe Club</a>
+            <a href="#" class="footer__logo logo">
+              Giraffe Club
+            </a>
             <div class="footer__contacts contacts">
               <div class="contacts__item">
                 <div class="contacts__title">Номер телефону:</div>
@@ -832,11 +836,11 @@
         </div>
       </footer>
     </div>
-    <dialog class="page__popup popup  popup--send" id="get-info">
+    <dialog class="popup  popup--send" id="get-info">
       <div class="popup__content">
         <h4 class="popup__title">Отримай консультацію</h4>
         <button type="button" class="popup__close" id="close-get-info"></button>
-        <form action="#" method="post" class="popup__form form-popup">
+        <form action="#" method="post" class="popup__form form-popup" data-popup="success-info">
           <input
             type="text"
             name="name"
@@ -857,6 +861,47 @@
           >
           <button type="submit" class="button button--send">Надіслати</button>
         </form>
+      </div>
+    </dialog>
+    <dialog class="popup  popup--send" id="send-order">
+      <div class="popup__content">
+        <h4 class="popup__title">Залишити заявку</h4>
+        <button type="button" class="popup__close" id="close-get-info"></button>
+        <form action="#" method="post" class="popup__form form-popup" data-popup="success-info">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ім'я"
+            required
+            minlength="3"
+            class="form-popup__item"
+          />
+          <input
+            type="tel" 
+            name="phone-number" 
+            id="phone-number"
+            placeholder="Номер тел."
+            required
+            minlength="10"
+            class="form-popup__item"
+          >
+          <button type="submit" class="button button--send">Надіслати</button>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="page__popup popup  popup--success" id="success-info">
+      <div class="popup__content">
+        <h4 class="popup__title">Дякуємо!</h4>
+        <button type="button" class="popup__close" id="close-get-info"></button>
+        <div class="popup--success__text">
+          <p>
+            Ваш запит надіслано. 
+          </p>
+          <p>
+            Чекайте дзвінка
+          </p>
+        </div>
       </div>
     </dialog>
     <script src="./scripts/main.js" defer></script>

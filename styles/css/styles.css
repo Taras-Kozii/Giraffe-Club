@@ -69,8 +69,10 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: calc(20px + (12) * (100vw - 360px) / (407.98));
-  font-size: 20px;
   font-weight: 600;
   line-height: 23px;
   color: #000;
@@ -83,12 +85,6 @@
 @media (min-width: 1720px) {
   .logo {
     font-size: 42px;
-  }
-}
-@media (min-width: 1200px) {
-  .logo {
-    font-size: 41.62px;
-    line-height: 49px;
   }
 }
 
@@ -385,6 +381,21 @@
   }
 }
 
+.popup {
+  left: 50%;
+  top: 50%;
+  translate: -50% -100px;
+  opacity: 0;
+  display: none;
+  -webkit-transition: all 0.7s allow-discrete;
+  transition: all 0.7s allow-discrete;
+  border-radius: 48px;
+}
+@media (max-width: 1720px) {
+  .popup {
+    border-radius: calc(20px + (28) * (100vw - 360px) / (1360));
+  }
+}
 .popup__content {
   position: relative;
   left: 0;
@@ -454,11 +465,50 @@
 }
 
 .popup::-ms-backdrop {
+  opacity: 0;
+  -ms-transition: all 0.7s allow-discrete;
+  transition: all 0.7s allow-discrete;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup::backdrop {
+  opacity: 0;
+  -webkit-transition: all 0.7s allow-discrete;
+  transition: all 0.7s allow-discrete;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup[open] {
+  display: block;
+  opacity: 1;
+  translate: -50% -50%;
+}
+
+.popup[open]::-ms-backdrop {
+  opacity: 1;
+}
+
+.popup[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .popup[open] {
+    opacity: 0;
+    translate: -50% -100px;
+  }
+  .popup[open]::-ms-backdrop {
+    opacity: 0;
+  }
+  .popup[open]::backdrop {
+    opacity: 0;
+  }
+}
+.popup--success {
+  text-align: center;
+}
+.popup--success__text p:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 .form-popup {
@@ -643,22 +693,6 @@ html {
 }
 .page__header:has(.burger.active) .header__logo {
   opacity: 1;
-}
-.page__popup[open] {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: 50;
-  border-radius: 48px;
-  -webkit-transition: 0.5s ease-in;
-  transition: 0.5s ease-in;
-  overflow: hidden;
-}
-@media (max-width: 1720px) {
-  .page__popup[open] {
-    border-radius: calc(20px + (28) * (100vw - 360px) / (1360));
-  }
 }
 
 .page.lock {
