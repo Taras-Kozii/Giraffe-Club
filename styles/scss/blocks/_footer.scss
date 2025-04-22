@@ -58,3 +58,82 @@
       row-gap: 10px;
     }
 }
+ @keyframes animate-svg-stroke-facebook-1 {
+  0% {
+    stroke-dashoffset: 301.25299072265625px;
+    stroke-dasharray: 150.62649536132812px;
+  }
+  50% {
+    stroke-dashoffset: 150.62649536132812px;
+    stroke-dasharray: 150.62649536132812px;
+  }
+
+  100% {
+    stroke-dashoffset: 301.25299072265625px;
+    stroke-dasharray: 150.62649536132812px;
+  }
+}
+
+svg:hover .svg-facebook-1 {
+  animation: animate-svg-stroke-facebook-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+
+ @keyframes animate-svg-stroke-instagram-1 {
+  0% {
+    stroke-dashoffset: 173.4752197265625px;
+    stroke-dasharray: 86.73760986328125px;
+  }
+  50% {
+    stroke-dashoffset: 86.73760986328125px;
+    stroke-dasharray: 86.73760986328125px;
+  }
+
+  100% {
+    stroke-dashoffset: 173.4752197265625px;
+    stroke-dasharray: 86.73760986328125px;
+  }
+}
+
+svg:hover .svg-instagram-1 {
+  animation: animate-svg-stroke-instagram-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+}
+
+@keyframes animate-svg-stroke-instagram-2 {
+  0% {
+    stroke-dashoffset: 82.60276119978693px;
+    stroke-dasharray: 41.30138059989346px;
+  }
+  50% {
+    stroke-dashoffset: 41.30138059989346px;
+    stroke-dasharray: 41.30138059989346px;
+  }
+
+  100% {
+    stroke-dashoffset: 82.60276119978693px;
+    stroke-dasharray: 41.30138059989346px;
+  }
+}
+
+svg:hover .svg-instagram-2 {
+  animation: animate-svg-stroke-instagram-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+}
+
+@keyframes animate-svg-stroke-instagram-3 {
+  0% {
+    stroke-dashoffset: 22.083308906957594px;
+    stroke-dasharray: 11.041654453478797px;
+  }
+  50% {
+    stroke-dashoffset: 11.041654453478797px;
+    stroke-dasharray: 11.041654453478797px;
+  }
+
+  100% {
+    stroke-dashoffset: 22.083308906957594px;
+    stroke-dasharray: 11.041654453478797px;
+  }
+}
+
+svg:hover.svg-instagram-3 {
+  animation: animate-svg-stroke-instagram-3 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+}
