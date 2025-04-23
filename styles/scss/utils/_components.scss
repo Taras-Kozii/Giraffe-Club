@@ -58,6 +58,7 @@
 }
 //==================================BUTTON=========================================
 .button {
+  position: relative;
   font-family: "Roboto", serif;
   font-weight: 400;
   background-color: #FCFCFC;
@@ -72,8 +73,22 @@
     font-family: "Bookman Old Style";
     font-weight: 300;
   }
-  &:hover {
-    color: #DF803E;
+  &[data-hover]:before {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include adaptive-property(font-size, 0.875, 1.25, 1.625, rem);
+    @include adaptive-property(line-height, 16, 24, 31);
+    @include adaptive-property(padding-inline, 1, 1.875, 2.625, rem);
+    @include adaptive-property(padding-block, 0.625, 0.9375, 1.25, rem);
+    overflow: hidden;
+    color: $bg-color-red;
+    clip-path: inset(0 100% 0 0);
+    transition: 0.5s;
+  }
+  &[data-hover]:hover::before {
+    clip-path: inset(0 0 0 0);
   }
   &:disabled {
     color: $text-color-gray;
@@ -83,23 +98,43 @@
 .button--leave {
   @include adaptive-property(padding-inline, 1.25, 1.875, 2.5, rem);
   @include adaptive-property(padding-block, 0.625, 0.9375, 1.25, rem);
-  background-color: $bg-color-red;
-  border: 2px solid $text-color-dark;
   &:hover {
-    background-color: #FCFCFC;
-    color:$bg-color-red;
     border: 2px solid #FCFCFC;
   }
 }
 .button--send {
   @include adaptive-property(padding-inline, 1.375, 2.75, 4.125, rem);
   @include adaptive-property(padding-block, 0.625, 0.9375, 1.25, rem);
-  background-color: $bg-color-red;
-  border: 2px solid $bg-color-red;
   &:hover {
-    background-color: #FCFCFC;
-    color: $bg-color-red;
+    border: 2px solid $bg-color-red;
+  } 
+}
+.button--leave,
+.button--send {
+  background-color: $bg-color-red;
+  border: 2px solid $text-color-dark;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 250%;
+    width: 150%;
+    border-radius: 50%;
+    bottom: 100%;
+    left: -25%;
+    background: #FCFCFC;
+    transition: 0.7s;
+    z-index: -1;
   }
+  &:hover:before {
+    bottom: -50%;
+  } 
+  &:hover {
+    color: $bg-color-red;
+  } 
 }
 .arrow {
   @include adaptive-property(width, 66, 0, 106);

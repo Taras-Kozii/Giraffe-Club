@@ -149,6 +149,7 @@
     }
   }
   &__list {
+    padding-block: 5px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 33px;
@@ -157,6 +158,37 @@
   &__link {
     @include adaptive-property(font-size, 1.25, 0, 1.625, rem);
     color: $text-color-dark;
+    span {
+      position: relative;
+    }
+    span::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transform-origin: center;
+      transform: translate(-50%, 0) scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    span:hover::before {
+      transform: translate(-50%, 0) scaleX(1);
+    }
+    @media (min-width: 1025px) {
+      span::before {
+        left: 0;
+        right: 0;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+      } 
+      span:hover::before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
+    }
   }
 }
 .menu.active {
