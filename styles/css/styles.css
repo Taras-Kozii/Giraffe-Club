@@ -2176,35 +2176,97 @@ svg:hover .svg-mail-4 {
   }
 }
 
-.mansory {
-  -webkit-columns: 2;
-     -moz-columns: 2;
-          columns: 2;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 8px;
+  max-height: 587px;
 }
 @media (min-width: 1200px) {
-  .mansory {
-    -webkit-columns: 3;
-       -moz-columns: 3;
-            columns: 3;
+  .masonry {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-row-gap: 20px;
+    max-height: 1020px;
   }
 }
-.mansory img {
+.masonry__item-1 {
+  grid-area: 1/1/3/3;
+}
+@media (min-width: 1200px) {
+  .masonry__item-1 {
+    grid-area: 1/1/5/4;
+  }
+}
+.masonry__item-2 {
+  grid-area: 1/3/3/5;
+}
+@media (min-width: 1200px) {
+  .masonry__item-2 {
+    grid-area: 5/1/9/4;
+  }
+}
+.masonry__item-3 {
+  grid-area: 3/1/5/5;
+}
+@media (min-width: 1200px) {
+  .masonry__item-3 {
+    grid-area: 1/4/4/9;
+  }
+}
+.masonry__item-4 {
+  grid-area: 5/1/6/5;
+}
+@media (min-width: 1200px) {
+  .masonry__item-4 {
+    grid-area: 1/9/4/13;
+  }
+}
+.masonry__item-5 {
+  grid-area: 6/1/9/3;
+}
+@media (min-width: 1200px) {
+  .masonry__item-5 {
+    grid-area: 4/4/9/8;
+  }
+}
+.masonry__item-6 {
+  grid-area: 9/1/10/3;
+}
+@media (min-width: 1200px) {
+  .masonry__item-6 {
+    grid-area: 7/8/9/10;
+  }
+}
+.masonry__item-7 {
+  grid-area: 6/3/8/5;
+}
+@media (min-width: 1200px) {
+  .masonry__item-7 {
+    grid-area: 7/10/9/13;
+  }
+}
+.masonry__item-8 {
+  grid-area: 8/3/10/5;
+}
+@media (min-width: 1200px) {
+  .masonry__item-8 {
+    grid-area: 4/8/7/13;
+  }
+}
+.masonry img {
   width: 100%;
-  height: auto;
   height: 100%;
-  margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   border-radius: 14px;
 }
 @media (max-width: 1720px) {
-  .mansory img {
-    margin-bottom: calc(8px + (12) * (100vw - 360px) / (1360));
-  }
-}
-@media (max-width: 1720px) {
-  .mansory img {
+  .masonry img {
     border-radius: calc(4px + (10) * (100vw - 360px) / (1360));
   }
 }
