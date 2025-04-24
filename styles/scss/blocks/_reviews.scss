@@ -5,7 +5,7 @@
     @include adaptive-property(margin-bottom, 24, 0, 64);
   }
   &__slider {
-    @include positiion-r;
+    @include position-r;
   }
 }
 .slider {
@@ -41,13 +41,13 @@
     flex-direction: column;
   }
   &__person {
-    @include positiion-r;
+    @include position-r;
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.8125rem;
     padding-bottom: 1.125rem;
     @include adaptive-property(padding-right, 60, 0, 86);
-    border-bottom: 2px solid #fcfcfc;
+    border-bottom: 2px solid $bg-color-white;
     column-gap: 10px;
   }
   &__img {
@@ -56,8 +56,6 @@
     right: 0;
     @include adaptive-property(width, 50, 0, 76);
     @include adaptive-property(height, 71, 0, 107);
-    // margin-left: -3rem;
-    // margin-bottom: -3rem;
     @include ibg(cover);
   }
   &__author {

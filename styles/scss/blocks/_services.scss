@@ -7,20 +7,20 @@
     align-items: center;
   }
   &__title {
-    align-self: flex-start
+    align-self: flex-start;
   }
   &__subtitle {
     @include adaptive-property(margin-bottom, 27, 0, 64);
   }
   &__list {
-    @include positiion-r; 
+    @include position-r;
     display: inline-flex;
     flex-direction: column;
     border-top: 2px solid $text-color-dark;
     border-bottom: 2px solid $text-color-dark;
     @include adaptive-property(margin-bottom, 24, 44, 64);
     @include onDesktop {
-      max-width: 41.61%
+      max-width: 41.61%;
     }
 
     li {
@@ -37,7 +37,7 @@
       bottom: 0;
       @include adaptive-property(width, 160, 160, 418);
       aspect-ratio: 0.708 / 1;
-      background-image: url('../../images/giraffe-big.webp');
+      background-image: url("../../images/giraffe-big.webp");
       background-repeat: no-repeat;
       background-size: contain;
       z-index: 2;

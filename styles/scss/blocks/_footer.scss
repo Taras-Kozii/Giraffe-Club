@@ -23,7 +23,7 @@
       row-gap: 1rem;
     }
   }
-  &__title, 
+  &__title,
   a {
     font-family: "Roboto", serif;
     @include adaptive-property(font-size, 0.875, 1, 1.125, rem);
@@ -38,27 +38,25 @@
     }
   }
   &__socials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include flex;
     column-gap: 10px;
   }
 }
 .socials {
   display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+  flex-direction: column;
+  row-gap: 0.5rem;
 
-    @include onTablet {
-      row-gap: 1rem;
-    }
-    &__items {
-      @include flex;
-      column-gap: 10px;
-      row-gap: 10px;
-    }
+  @include onTablet {
+    row-gap: 1rem;
+  }
+  &__items {
+    @include flex;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
 }
- @keyframes animate-svg-stroke-facebook-1 {
+@keyframes animate-svg-stroke-facebook-1 {
   0% {
     stroke-dashoffset: 301.25299072265625px;
     stroke-dasharray: 150.62649536132812px;
@@ -75,10 +73,10 @@
 }
 
 svg:hover .svg-facebook-1 {
-  animation: animate-svg-stroke-facebook-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  animation: animate-svg-stroke-facebook-1 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
 }
 
- @keyframes animate-svg-stroke-instagram-1 {
+@keyframes animate-svg-stroke-instagram-1 {
   0% {
     stroke-dashoffset: 173.4752197265625px;
     stroke-dasharray: 86.73760986328125px;
@@ -95,7 +93,7 @@ svg:hover .svg-facebook-1 {
 }
 
 svg:hover .svg-instagram-1 {
-  animation: animate-svg-stroke-instagram-1 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
+  animation: animate-svg-stroke-instagram-1 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0s both;
 }
 
 @keyframes animate-svg-stroke-instagram-2 {
@@ -115,7 +113,7 @@ svg:hover .svg-instagram-1 {
 }
 
 svg:hover .svg-instagram-2 {
-  animation: animate-svg-stroke-instagram-2 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
+  animation: animate-svg-stroke-instagram-2 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both;
 }
 
 @keyframes animate-svg-stroke-instagram-3 {
@@ -135,5 +133,5 @@ svg:hover .svg-instagram-2 {
 }
 
 svg:hover.svg-instagram-3 {
-  animation: animate-svg-stroke-instagram-3 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
+  animation: animate-svg-stroke-instagram-3 $transition-duraction-long cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s both;
 }

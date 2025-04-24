@@ -1,6 +1,6 @@
 .about {
   &__content {
-    @include positiion-r;
+    @include position-r;
     z-index: 3;
   }
   &__subtitle {
@@ -29,5 +29,11 @@
     aspect-ratio: 1 / 1;
     margin-bottom: 1.0625rem;
     @include ibg;
+    transition: $transition-duraction-short;
+    &:hover {
+      translate: 0 -10px;
+      scale: 1.05;
+      rotate: 1deg;
+    }
   }
 }

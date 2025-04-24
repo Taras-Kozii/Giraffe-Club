@@ -41,42 +41,36 @@
     @include onDesktop {
       grid-area: 5 / 1 / 9 / 4;
     }
-    
   }
   &__item-3 {
     grid-area: 3 / 1 / 5 / 5;
     @include onDesktop {
       grid-area: 1 / 4 / 4 / 9;
     }
-    
   }
   &__item-4 {
     grid-area: 5 / 1 / 6 / 5;
     @include onDesktop {
       grid-area: 1 / 9 / 4 / 13;
     }
-    
   }
   &__item-5 {
     grid-area: 6 / 1 / 9 / 3;
     @include onDesktop {
       grid-area: 4 / 4 / 9 / 8;
     }
-    
   }
   &__item-6 {
     grid-area: 9 / 1 / 10 / 3;
     @include onDesktop {
       grid-area: 7 / 8 / 9 / 10;
     }
-    
   }
   &__item-7 {
     grid-area: 6 / 3 / 8 / 5;
     @include onDesktop {
       grid-area: 7 / 10 / 9 / 13;
     }
-    
   }
   &__item-8 {
     grid-area: 8 / 3 / 10 / 5;
@@ -86,7 +80,7 @@
   }
   &:hover img {
     opacity: 0.7;
-    transition: 0.5s;
+    transition: $transition-duraction-short;
   }
   img {
     width: 100%;

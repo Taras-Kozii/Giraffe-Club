@@ -32,7 +32,6 @@
         align-items: start;
       }
     }
-
   }
   &__img {
     aspect-ratio: 1.32 / 1;
@@ -45,7 +44,7 @@
       order: 2;
     }
     img {
-      transition: 0.5s;
+      transition: $transition-duraction-short;
     }
     &:hover img {
       transform: rotate(1deg) scale(1.15);

@@ -4,7 +4,7 @@
     @include adaptive-property(margin-bottom, 24, 0, 64);
   }
   &__slider {
-    @include positiion-r;
+    @include position-r;
     @include adaptive-property(margin-bottom, 90, 0, 120);
   }
   &__slider .slider-team__content {
@@ -18,16 +18,15 @@
   flex-shrink: 0;
   width: 100%;
   @include adaptive-property(width, 255, 0, 400);
-  background-color: #FCFCFC;
+  background-color: $bg-color-white;
   @include adaptive-property(border-radius, 8, 0, 14);
   @include p-margin;
   text-align: center;
+  overflow: hidden;
   cursor: pointer;
 
   &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     flex-direction: column;
   }
   &__person {
@@ -36,12 +35,14 @@
     justify-content: center;
     @include adaptive-property(padding, 16, 0, 40);
     transition-property: grid-template-rows;
-    transition-duration: 0.2s;
-
+    transition-duration: $transition-duraction-short;
   }
   &__img {
     @include adaptive-property(width, 94, 0, 400);
     @include adaptive-property(height, 110, 0, 509);
+    @include onDesktop {
+      width: 100%;
+    }
     @include ibg;
     img {
       margin-top: 17px;
