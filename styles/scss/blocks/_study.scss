@@ -36,13 +36,20 @@
   }
   &__img {
     aspect-ratio: 1.32 / 1;
+    border-radius: 14px;
+    order: 3;
     @include ibg;
     @include onDesktop {
       aspect-ratio: 1.893 / 1;
       flex-basis: 57%;
       order: 2;
     }
-    order: 3
+    img {
+      transition: 0.5s;
+    }
+    &:hover img {
+      transform: rotate(1deg) scale(1.15);
+    }
   }
   &__title {
     @include adaptive-property(margin-bottom, 24, 0, 72);
