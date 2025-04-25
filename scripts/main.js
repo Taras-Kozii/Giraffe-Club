@@ -4,9 +4,11 @@ const header = document.querySelector('.header');
 const burgerIcon = document.querySelector('.burger');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('[data-goto]');
+const hero = document.querySelector('.hero');
 const popups = document.querySelectorAll('.popup');
 const openPopupButtons = document.querySelectorAll('.open-popup');
 const formInPopupItems = document.querySelectorAll('.popup .form-popup');
+const animItems = document.querySelectorAll('.scroll-anim');
 
 //===============================MENU-BURGER===========================================
 if (burgerIcon) {
@@ -68,6 +70,14 @@ const reviewsSlider = new Swiper('.reviews__slider .swiper', {
     prevEl: '.reviews__slider .slider__button-prev',
   },
   autoHeight: true,
+  observer: true,
+	observeParents: true,
+	observeSlideChildren: true,
+  on: {
+    slideChangeTransitionEnd: function () {
+      this.updateAutoHeight();
+    }
+  },
   speed: 800,
   keyboard: {
     enabled: true,
@@ -75,11 +85,11 @@ const reviewsSlider = new Swiper('.reviews__slider .swiper', {
     pageUpDown: true,
   },
 
-  // autoplay: {
-  //   delay: 5000,
-  //   stopOnLastSlide: false,
-  //   disableOnInteraction: true,
-  // },
+  autoplay: {
+    delay: 5000,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+  },
 });
 
 const teamSlider = new Swiper('.slider-team .swiper', {
@@ -88,6 +98,11 @@ const teamSlider = new Swiper('.slider-team .swiper', {
     prevEl: '.slider-team .slider__button-prev',
   },
   autoHeight: true,
+  on: {
+    slideChangeTransitionEnd: function () {
+      this.updateAutoHeight();
+    }
+  },
   speed: 800,
   initialSlide: 1,
   centeredSlides: true,
@@ -129,4 +144,28 @@ function lockPage() {
   const rightPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
   setFixPadding(rightPaddingValue);
   page.classList.toggle('lock');
+}
+
+window.addEventListener('scroll', () => {
+  scrollAnim();
+});
+function scrollAnim() {
+  for (const item of animItems) {
+    if (isInView(item, 0.35)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  }
+}
+function setCSSProperty(item, property, value) {
+  item.style.setProperty(property, value);
+}
+function isInView(elem, persent= 0.3) {
+  const rect = elem.getBoundingClientRect();
+  const elemHeight = elem.offsetHeight;
+  const visiblePart = elemHeight * persent;
+  
+  return rect.bottom > 0 && rect.top < (
+    window.innerHeight - visiblePart || document.documentElement.clientHeight - visiblePart);
 }

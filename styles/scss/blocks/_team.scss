@@ -34,8 +34,6 @@
     grid-template-rows: minmax(30px, 70px) minmax(30px, 70px) 0fr;
     justify-content: center;
     @include adaptive-property(padding, 16, 0, 40);
-    transition-property: grid-template-rows;
-    transition-duration: $transition-duraction-short;
   }
   &__img {
     @include adaptive-property(width, 94, 0, 400);
@@ -80,11 +78,12 @@
   &__text {
     overflow: hidden;
   }
-  &__position,
-  &__text p {
+&__position,
+&__text p:not(:last-child) {
     @include adaptive-property(margin-bottom, 0.25, 0, 0.875, rem);
   }
 }
 .swiper-slide-active .team-item__person {
   grid-template-rows: minmax(30px, 70px) minmax(30px, 70px) 1fr;
 }
+

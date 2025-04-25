@@ -25,6 +25,20 @@
 
     li {
       @include adaptive-property(padding-block, 0.625, 0.9375, 1.25, rem);
+      transition: $transition-duraction-long;
+      transition-delay: 0.2s;
+    }
+    li:nth-child(odd) {
+      translate: 100% 0;
+      opacity: 0;
+    }
+    li:nth-child(even) {
+      translate: -100% 0;
+      opacity: 0;
+    }
+    li.active {
+      translate: 0% 0;
+      opacity: 1;
     }
     li:not(:last-child) {
       border-bottom: 2px solid $text-color-dark;
