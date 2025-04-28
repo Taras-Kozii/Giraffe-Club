@@ -1,5 +1,4 @@
 .hero {
-  --translate: 0% -50%;
   background-color: $bg-color-red;
   @include p-margin;
   @include position-r;
@@ -52,7 +51,7 @@
     width: 100%;
     @include flex;
     flex-direction: column;
-    @include adaptive-property(margin-top, 2, 2, 2.875, rem);
+    @include adaptive-property(margin-top, 3, 0, 2.875, rem);
 
     @include onDesktop {
       width: 52%;

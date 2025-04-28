@@ -1,33 +1,88 @@
 <!DOCTYPE html>
 <html lang="uk-UA">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giraffe CLub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="preload"
-    >
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
       rel="preload"
-      
-    >
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
     <link
       rel="shortcut icon"
       href="./images/icons/favicon.ico"
       type="image/x-icon"
-    >
-    <link rel="preload" as="image" imagesrcset="./images/giraffe-big.webp">
+    />
+    <link rel="preload" as="image" imagesrcset="./images/giraffe-big.webp" />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle.woff"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/BookmanOldStyle.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      as="style"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    >
-    <link rel="stylesheet" href="./styles/css/styles.min.css">
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link rel="stylesheet" href="./styles/css/styles.min.css" />
   </head>
   <body class="page right-fix-padding">
     <div class="wrapper">
@@ -76,16 +131,21 @@
               <div class="header__img">
                 <img
                   src="./images/giraffe-big.webp"
+                  srcset="
+                    ./images/giraffe-small.webp  600w,
+                    ./images/giraffe-big.webp   1200w
+                  "
+                  sizes="(max-width: 600px) 600px, 1200px"
                   alt="giraffe-photo"
                   decoding="async"
                   width="140"
                   height="195"
-                >
+                />
               </div>
             </nav>
             <div class="header__socials socials-items">
               <a
-                href="#"
+                href="https://maps.app.goo.gl/8UWzAzXv6AMJJiKNA"
                 target="_blank"
                 class="socials-items__link"
                 aria-label="google-maps-address"
@@ -240,7 +300,7 @@
                   decoding="async"
                   width="140"
                   height="195"
-                >
+                />
               </div>
             </div>
           </div>
@@ -258,7 +318,7 @@
               <div class="about__items">
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_1.svg" alt="calerndar">
+                    <img src="./images/about/about_1.svg" alt="calerndar" />
                   </div>
                   <div class="item__text">
                     <p>6 років успішної робот</p>
@@ -266,7 +326,7 @@
                 </article>
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_2.svg" alt="open-book">
+                    <img src="./images/about/about_2.svg" alt="open-book" />
                   </div>
                   <div class="item__text">
                     <p>Сучасні програми й навчальні матеріали</p>
@@ -274,7 +334,7 @@
                 </article>
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_3.svg" alt="teacher">
+                    <img src="./images/about/about_3.svg" alt="teacher" />
                   </div>
                   <div class="item__text">
                     <p>Професійні викладачи</p>
@@ -282,7 +342,7 @@
                 </article>
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_4.svg" alt="grades">
+                    <img src="./images/about/about_4.svg" alt="grades" />
                   </div>
                   <div class="item__text">
                     <p>Переможець «Народний Бренд» (2018, 2019, 2020)</p>
@@ -290,7 +350,7 @@
                 </article>
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_5.svg" alt="hands">
+                    <img src="./images/about/about_5.svg" alt="hands" />
                   </div>
                   <div class="item__text">
                     <p>Топ партнер Cambridge Assessment English</p>
@@ -298,7 +358,7 @@
                 </article>
                 <article class="item">
                   <div class="item__img">
-                    <img src="./images/about/about_6.svg" alt="student">
+                    <img src="./images/about/about_6.svg" alt="student" />
                   </div>
                   <div class="item__text">
                     <p>Сотні наших випускників з високим рівнем</p>
@@ -365,7 +425,18 @@
                   </ol>
                 </div>
                 <div class="study__img">
-                  <img src="./images/study.webp" alt="classmates">
+                  <img
+                    src="./images/study.webp"
+                    srcset="
+                      ./images/study-small.webp  600w,
+                      ./images/study.webp       1200w
+                    "
+                    sizes="(max-width: 600px) 600px, 1200px"
+                    alt="team-mate"
+                    decoding="async"
+                    width="320"
+                    height="243"
+                  />
                 </div>
                 <div class="study__format ol-list">
                   <h2 class="study__subtitle section-subtitle">
@@ -432,7 +503,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-2">
                   <img
@@ -442,7 +513,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-3">
                   <img
@@ -452,7 +523,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-4">
                   <img
@@ -462,7 +533,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-5">
                   <img
@@ -472,7 +543,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-6">
                   <img
@@ -483,7 +554,7 @@
                     loading="lazy"
                     decoding="async"
                     class="mansory__item--6"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-7">
                   <img
@@ -493,7 +564,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
                 <div class="masonry__item-8">
                   <img
@@ -503,7 +574,7 @@
                     height="170"
                     loading="lazy"
                     decoding="async"
-                  >
+                  />
                 </div>
               </div>
             </div>
@@ -531,7 +602,7 @@
                             height="110"
                             loading="lazy"
                             decoding="async"
-                          >
+                          />
                         </div>
                         <div class="team-item__person">
                           <h4 class="team-item__name">Валерія Звіранська</h4>
@@ -556,7 +627,7 @@
                             height="110"
                             loading="lazy"
                             decoding="async"
-                          >
+                          />
                         </div>
                         <div class="team-item__person">
                           <h4 class="team-item__name">Ольга Мануйлова</h4>
@@ -581,7 +652,7 @@
                             height="110"
                             loading="lazy"
                             decoding="async"
-                          >
+                          />
                         </div>
                         <div class="team-item__person">
                           <h4 class="team-item__name">Наталія Шмалько</h4>
@@ -606,7 +677,7 @@
                             height="110"
                             loading="lazy"
                             decoding="async"
-                          >
+                          />
                         </div>
                         <div class="team-item__person">
                           <h4 class="team-item__name">Ольга Березовська</h4>
@@ -689,7 +760,7 @@
                               height="110"
                               loading="lazy"
                               decoding="async"
-                            >
+                            />
                           </div>
                         </div>
                         <div class="post__text">
@@ -722,18 +793,13 @@
                               height="110"
                               loading="lazy"
                               decoding="async"
-                            >
+                            />
                           </div>
                         </div>
                         <div class="post__text">
                           <p>
                             Високий рівень викладання – викладачі прекрасні,
-                            професіонали своєї справи. Звернулися до Ольги до
-                            Жирафа Клаба за рекомендацією. Хочу особливо
-                            відзначити організованість, дисципліну, чіткість,
-                            гарний та зручний дизайн офісу. Враження лише
-                            позитивні, чудові, результат навчання – міжнародний
-                            сертифікат у дочки. Рекомендую.
+                            професіонали своєї справи.
                           </p>
                         </div>
                       </div>
@@ -755,7 +821,7 @@
                               height="110"
                               loading="lazy"
                               decoding="async"
-                            >
+                            />
                           </div>
                         </div>
                         <div class="post__text">
@@ -764,9 +830,7 @@
                             професіонали своєї справи. Звернулися до Ольги до
                             Жирафа Клаба за рекомендацією. Хочу особливо
                             відзначити організованість, дисципліну, чіткість,
-                            гарний та зручний дизайн офісу. Враження лише
-                            позитивні, чудові, результат навчання – міжнародний
-                            сертифікат у дочки. Рекомендую.
+                            гарний та зручний дизайн офісу.
                           </p>
                         </div>
                       </div>
@@ -850,7 +914,7 @@
               <div class="socials__title">Соціальні мережі:</div>
               <div class="socials__items">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/"
                   target="_blank"
                   class="contacts__social"
                   aria-label="facebook-icon"
@@ -876,7 +940,7 @@
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/accounts/login/"
                   target="_blank"
                   class="contacts__social"
                   aria-label="instagram-icon"
@@ -950,12 +1014,12 @@
             required
             minlength="3"
             class="form-popup__item"
-          >
-          <input
-            type="tel"
+          />
+          <input type="tel" 
             name="phone-number"
-            id="phone-number"
             placeholder="Номер тел."
+            inputmode="tel" 
+            pattern="^(\+380\d{9}|0\d{9})$" 
             required
             minlength="10"
             class="form-popup__item"
@@ -981,11 +1045,12 @@
             required
             minlength="3"
             class="form-popup__item"
-          >
-          <input
-            type="tel"
+          />
+          <input type="tel" 
             name="phone-number"
             placeholder="Номер тел."
+            inputmode="tel" 
+            pattern="^(\+380\d{9}|0\d{9})$" 
             required
             minlength="10"
             class="form-popup__item"

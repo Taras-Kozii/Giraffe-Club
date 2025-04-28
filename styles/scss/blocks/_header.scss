@@ -47,6 +47,7 @@
     visibility: visible;
     z-index: 5;
     transition: $transition-duraction-short;
+    font-size: 32px;
     @media (min-width: 1025px) {
       display: none;
     }
@@ -66,8 +67,14 @@
 .header:has(.burger:not(.active)):before {
   z-index: -1;
 }
+.header:has(.burger.active):before {
+  transition: $transition-duraction-long;
+  background-color: rgba(252, 252, 252, 0.5);
+  z-index: 5;
+}
 .header:has(.burger.active)::after {
   background-color: $bg-color-red;
+  
 }
 .burger {
   @include onLaptop {
@@ -140,6 +147,7 @@
     background-color: $bg-color-white;
     padding: 86px 20px 30px;
     transition: $transition-duraction-short ease-in;
+    overflow-y: auto;
     &__list {
       display: flex;
       flex-direction: column;
@@ -150,8 +158,8 @@
     padding-block: 5px;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 33px;
-    row-gap: 1rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
   }
   &__link {
     @include adaptive-property(font-size, 1.25, 0, 1.625, rem);

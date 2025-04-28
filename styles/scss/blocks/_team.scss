@@ -31,7 +31,7 @@
   }
   &__person {
     display: grid;
-    grid-template-rows: minmax(30px, 70px) minmax(30px, 70px) 0fr;
+    grid-template-rows: auto auto 0fr;
     justify-content: center;
     @include adaptive-property(padding, 16, 0, 40);
   }
@@ -50,6 +50,7 @@
     }
   }
   &__name {
+    align-self: start;
     display: flex;
     justify-content: center;
     padding-bottom: 8px;
@@ -84,6 +85,6 @@
   }
 }
 .swiper-slide-active .team-item__person {
-  grid-template-rows: minmax(30px, 70px) minmax(30px, 70px) 1fr;
+  grid-template-rows: auto auto 1fr;
 }
 
